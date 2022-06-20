@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.donabit.demo.challenge.ChallengeDAO2">
+	
+ 	<insert id="insertChallenge" parameterType="ChallengeDTO2">
+	 	INSERT INTO challenge(chname, chdesc, chimg, chsuccess, chdonate, chexp, chmaxp, chsdate, chedate, donatepay, donateco) 
+	 	VALUES(#{chname}, #{chdesc}, #{chimgname}, #{chsuccess}, #{chdonate}, #{chexp}, #{chmaxp}, #{chsdate}, #{chedate}, #{donatepay}, #{donateco})
+	</insert>
+	
+	<select id="selectChallengePage" resultType="ChallengeDTO2">
+		SELECT chnum, chname, chdesc, chimg as chimgname, chsuccess, chdonate, chexp, chmaxp, chsdate, chedate, donatepay, donateco FROM challenge	limit #{index}, #{count}
+	</select>
+	
+	<select id="selectChallengeName" resultType="ChallengeDTO2">
+		SELECT chnum, chname FROM challenge
+	</select>
+	
+	<select id="selectChallengingCountByNickname" parameterType="String" resultType="int">
+		SELECT count(*) FROM challenging WHERE personalpf = 0 AND nickname LIKE #{nickname};
+	</select>
+	
+	<select id="selectSuccessCountByNickname" parameterType="String" resultType="int">
+		SELECT count(*) FROM challenging WHERE personalpf = 1 AND nickname LIKE #{nickname};
+	</select>
+	
+	<select id="selectChallengeNameByNumber" parameterType="int" resultType="String">
+		SELECT chname FROM challenge WHERE chnum = #{chnum}
+	</select>
+	
+	<select id="selectChallengingMemberCount" parameterType="int" resultType="int">
+		SELECT count(*) FROM challenging WHERE chnum = #{chnum}
+	</select>
+	
+	<select id="selectSuccessMemberCount" parameterType="int" resultType="int">
+		SELECT count(*) FROM challenging WHERE personalpf = 1 AND chnum = #{chnum}
+	</select>
+	
+	<select id="selectChallengeCount" resultType="int">
+		SELECT count(*) FROM challenge	
+	</select>
+	
+	<select id="selectCheckCount" parameterType="int" resultType="int">
+		SELECT count(*) FROM checks WHERE chnum = #{chnum}
+	</select>
+	
+	<select id="selectCheckCountByNickname" parameterType="String" resultType="int">
+		SELECT count(*) FROM checks WHERE nickname LIKE #{nickname}
+	</select>
+	
+	<select id="selectMember" resultType="memberdto">
+		SELECT * FROM member ORDER BY auth
+	</select>
+	
+	<select id="selectMemberCount" resultType="int">
+		SELECT count(*) FROM member
+	</select>
+	
+	<delete id="deleteChallenge" parameterType="int">
+		DELETE FROM challenge WHERE chnum = #{chnum}
+	</delete>
+	
+	<select id="selectReportCountByNickname" parameterType="String" resultType="int">
+		SELECT count(toggle.report) FROM checks LEFT JOIN toggle ON checks.checkid = toggle.checkid WHERE nickname LIKE #{nickname}
+	</select>
+	
+	<select id="selectMemberInfoByNumber" parameterType="int" resultType="challengingdto">
+		SELECT member.nickname AS nickname, member.email, challenging.personalpf AS personalpf FROM donabit.member LEFT JOIN challenging ON member.nickname = challenging.nickname WHERE challenging.chnum = #{chnum};
+	</select>
+	
+	<select id="selectEachReportCountByNumber" parameterType="String" resultType="int">
+		SELECT count(report) FROM checks LEFT JOIN toggle ON checks.checkid = toggle.checkid WHERE chnum = #{chnum} AND nickname LIKE #{nickname}
+	</select>
+	
+	<select id="selectEachCheckCountByNumber" parameterType="String" resultType="int">
+		SELECT count(#{nickname}) FROM checks WHERE chnum = #{chnum}
+	</select>
+	
+	<select id="selectReportDto" resultType="reportdto">
+		SELECT checks.checkid AS checkid, nickname, chnum, checktime, checktitle, checkdesc, checkimg, count(toggle.report) AS report 
+		FROM donabit.checks JOIN donabit.toggle ON checks.checkid = toggle.checkid GROUP BY checkid;
+	</select>
+	
+	<select id="selectMainChallenge" resultType="challengedto">
+		SELECT challenge.chnum, chname, count(challenging.nickname) AS nickname, chmaxp, chimg FROM challenge JOIN challenging ON challenge.chnum = challenging.chnum GROUP BY chnum;
+	</select>
+	
+</mapper>
+	

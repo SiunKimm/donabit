@@ -1,0 +1,193 @@
+@charset "UTF-8";
+
+.swiper-slide{
+	height:150px;
+	position:relative;
+	top:20px;
+}
+
+
+.slidename{
+	position:absolute;
+	width: 50%;
+	top: 170px;
+	left: 50px;
+}
+
+#badgename{
+	position:absolute;
+	width: 50%;
+	top: 170px;
+}
+
+.slidetext{
+	background-color: white;	
+	width:200px;
+}
+
+.slideimg, #badgein{
+	border-radius:40%;
+}
+
+.profileimg{
+	width:150px;
+	height:150px;
+	border-radius:40%;
+	
+}
+
+.boxes{
+	position : absolute;
+	left:25%; 
+	top:25%;
+	margin: 0 auto;
+	
+	justify-content: center;
+    align-items: center;
+
+    height: 800px;
+    width: 1200px;
+    top: 100px;
+    left: 0;
+    right: 0;
+    padding-left : 20px;
+    padding-right : 20px;
+     
+    display: inline-flex;
+    
+	border: 2px solid #ffccdf;
+	border-radius:10%;
+}
+
+.profilebox {
+    width: 280px;
+    height: 480px;
+    border : 1px dotted #FF85B3;
+    border-radius:20%;
+   
+  }
+  
+.profile-wrapper {
+	text-align: center;
+	margin-top: 25px;
+}
+
+.nick-level {
+	text-align: center;
+  	padding-top: 10px;
+  	padding-bottom: 10px;
+}
+
+.imgicon {
+	width:30px;
+	height:30px;
+}
+
+.listContainer{  
+  padding: 0;
+  margin-bottom: 10px;
+}
+.listContainer .setting{  
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  color: black;
+  text-decoration: none;  
+  height: 56px;
+  box-sizing: border-box;
+}
+.listContainer .sicon{  
+  margin-right: 10px;
+}
+.listContainer .stext{
+  font-size: 15px;
+  position: relative;
+  
+}
+.listContainer .sright{
+  margin-left: auto;
+}
+
+
+
+.challenge-box {
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    width: 700px;
+    top: 100px;
+    left: 0;
+    right: 0;
+    margin-left: 200px;
+  } 
+  
+.challenge-ing {
+    margin-top: 20px;
+    width: 100%;
+    height: 40%;
+    margin: auto;
+    padding: auto;
+    margin-bottom: 10%;
+
+  }
+
+.challenge-badge {
+    width: 100%;
+    height: 40%;
+    margin: auto;
+    padding: auto;
+    border : 1px dotted #FF85B3;
+    border-radius:20%;
+  }
+  
+  .go-challenge, .badge {
+    all: unset;
+    background-color: transparent;
+    width: 200px;
+    text-align: center;
+    display: flex;
+    padding: 80px 80px 100px 250px;
+    align-items: center;
+    border-radius: 5px;
+    color: rgb(116, 116, 116);
+  }
+  
+  .go-challenge:hover{
+    color: rgb(185, 185, 185);
+  }
+  
+  .badge:hover{
+    color: rgb(185, 185, 185);
+  }  
+  
+h1, h3, h4, p{
+	color:#fc5192;
+}
+
+/* Swiper */
+.swiper-container {
+	height: 250px;
+	width: 700px;
+	border: 1px dotted #FF85B3;
+	border-radius: 12px;
+}
+
+.swiper-slide {
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.swiper-slide img {
+	max-width: 100%;
+}
+
+.swiper-button-next, .swiper-button-prev {
+	display: none;
+}
+
+.swiper-pagination-bullet {
+	background: #FF85B3;
+}
+

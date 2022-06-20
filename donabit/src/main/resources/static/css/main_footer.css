@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+footer {
+    background-color: dimgray;
+}
+
+.footer_container { 
+	padding-top: 35px; 
+	padding-bottom: 35px; 
+	display: block; 
+	cursor: default; 
+	text-align: center; 
+	color: rgba(255, 255, 255, 1); 
+	background-color: dimgray;
+}
+	
+.footer_container .footA { 
+	font-size: 25px; 
+	margin-top: 20px; 
+	margin-bottom: 10px;
+}
+	
+.footer_container .footB { 
+	font-size: 15px;
+}

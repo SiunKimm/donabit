@@ -1,0 +1,312 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Poor+Story&display=swap');
+
+body, .tuto{
+	font-family: 'Poor Story', cursive;
+}
+
+.carousel-container{
+  max-width: 100%;
+  margin: auto;
+  border: 0px solid #000;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-slide{
+  max-width: auto;
+  height: 450px;
+  display: flex;
+
+}
+
+.carousel-slide img{
+  max-width: auto;
+  height: auto;
+  display: block;
+}
+
+#prevBtn{
+  font-size: 50px;
+  position:absolute;
+  top: 50%;
+  left: 20px;
+  transform: translate(0%, -50%);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: dimgray;
+}
+
+#nextBtn{
+  font-size: 50px;
+  position:absolute;
+  top: 50%;
+  right: 20px;
+  transform: translate(0%, -50%);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: dimgray;
+}
+
+.h1 {
+	display: center;
+
+}
+
+/* 캐러셀 끝 */
+
+.div_motto {
+	margin-top: 100px;
+	margin-bottom: 100px;
+	text-align: center;
+}
+
+p.result1,p.result2{
+	display: inline-block;
+	font-size:30px;
+	height:24px;
+	line-height: 24px;
+	border-right: 1px solid #fff;
+	padding-right: 2px;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 5px;
+	font-weight: bold;
+
+}
+
+p.cursor {
+	animation: cursor 0.4s infinite;}
+
+@keyframes cursor{ 
+      0%{border-right: 1px solid #fff} 
+      50%{border-right: 1px solid #000} 
+      100%{border-right: 1px solid #fff} 
+    }
+
+/* 섹션 motto 끝 */  
+.Ch001 {
+	margin: 7em 0;	
+}
+.Ch_container_1 {  
+	display: grid;
+	grid-template-columns: 250px 250px 250px 250px;
+	gap: 2.5em;
+	grid-auto-flow: row dense;
+	justify-content: center;
+	align-content: center;
+	justify-items: stretch;
+	align-items: stretch;
+	grid-template-areas:
+	  "Ch1 Ch1 Ch1 Ch1";
+}
+
+.Ch1 { grid-area: Ch1;
+border-radius: 2%;
+}
+
+.main_challenge_info {
+	font-size: 1.2em;
+	padding: 0.2em 0;
+	
+}
+/* 섹션 ch1 끝 */
+
+.notice {
+	margin-bottom: 100px;
+}
+
+h1.notice {
+	text-align: center;
+	margin-bottom: 5px;
+	font-size: 40px;
+	
+	position: relative;
+	right: 395px;
+}
+
+.notice_body_table {
+	display: table;
+	margin: 0 auto;
+	width: 1110px;
+	right: -750px;
+}
+
+.notice_body_row {
+	display: table-row;
+	font-size: 1em;
+	justify-content: space-between;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.notice_body_cell, .notice_body_cell:active, .more, .more:active {
+	color: inherit;
+	text-decoration: none;
+}
+
+.notice_body_cell {
+	display: table-cell;
+	border-bottom: 1px solid black;
+	padding-top: 25px;
+	padding-bottom: 25px;
+	padding-left: 20px;
+}
+
+.notice_body_cell:first-child{
+	padding-right: 20em;
+}
+
+.notice_body_cell:first-child:hover {
+	color: #fc5192;
+}
+
+.notice_body_cell:last-child {
+	text-align: right;
+	padding: 20px;
+}
+
+hr.notice_body {
+	width: 1110px;
+	margin:0 auto;
+	height: 1px;
+}
+
+/* 섹션 notice 끝 */
+
+section.ads {
+	display: flex;
+	justify-content: space-between;
+	margin: 0 auto;
+	width: 1110px;
+}
+
+h1.ads {
+
+	margin-bottom: 20px;
+	font-size: 40px;
+	
+	position: relative;
+
+}
+
+div.ads {
+	text-align: left;
+	font-size: 18px;
+	position: relative;
+	text-indent: 0.5em;
+	margin: 0 auto;
+
+}
+
+#tutorial_img {
+	width: 400px;
+	height: 250px;
+	border-radius: 2%;
+}
+/* 섹션 ads 끝 */
+
+button.tuto{
+  background:#FF85B3;
+  color:#fff;
+  border:none;
+  position:relative;
+  height:40px;
+  font-size:1.2em;
+  padding:0 1em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+
+}
+button.tuto:hover{
+  background:#fff;
+  color:#1AAB8A;
+}
+button.tuto:before,button.tuto:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #1AAB8A;
+  transition:400ms ease all;
+}
+button.tuto:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+button.tuto:hover:before,button.tuto:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+
+/* 버튼 끝 */
+
+@keyframes scroll {
+	 0% {
+		 transform: translateX(0);
+	}
+	 100% {
+		 transform: translateX(calc(-250px * 7));
+	}
+}
+ .slider {
+	 background: white;
+	 box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
+	 height: 100px;
+	 margin: auto;
+	 overflow: hidden;
+	 position: relative;
+	 max-width: auto;
+	 margin-top: 150px;
+}
+ .slider::before, .slider::after {
+	 background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+	 content: "";
+	 height: 100px;
+	 position: absolute;
+	 width: 200px;
+	 z-index: 2;
+}
+ .slider::after {
+	 right: 0;
+	 top: 0;
+	 transform: rotateZ(180deg);
+}
+ .slider::before {
+	 left: 0;
+	 top: 0;
+}
+ .slider .slide-track {
+	 animation: scroll 40s linear infinite;
+	 display: flex;
+	 width: calc(250px * 24);
+}
+ .slider .slide {
+	 height: 100px;
+	 width: 250px;
+}
+
+/* 하단 슬라이드 끝 */
+
+hr.three {
+	width: 1500px;
+	margin:0 auto;
+}
+
+hr.four {
+	width: 1110px;
+	margin:0 auto;
+	height: 1px;
+	border: solid 1px;
+	margin-top: 5px;
+
+}
+
+/* h 수평선 끝 */
